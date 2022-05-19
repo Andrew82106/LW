@@ -1,0 +1,66 @@
+小样本诈骗数据集+正常数据集+CNN：
+Test Loss:    1.1, Test Acc:  63.46%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.96      0.28      0.44       156
+      normal       0.58      0.99      0.73       156
+
+    accuracy                           0.63       312
+   macro avg       0.77      0.63      0.58       312
+weighted avg       0.77      0.63      0.58       312
+开源诈骗数据集+正常数据集+CNN:
+Test Loss:  0.058, Test Acc:  97.66%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.95      0.98       107
+      normal       0.96      1.00      0.98       107
+
+    accuracy                           0.98       214
+   macro avg       0.98      0.98      0.98       214
+weighted avg       0.98      0.98      0.98       214
+小样本诈骗数据集+正常数据集+GRU：
+Test Loss:    1.2, Test Acc:  70.83%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.96      0.44      0.60       156
+      normal       0.63      0.98      0.77       156
+
+    accuracy                           0.71       312
+   macro avg       0.80      0.71      0.68       312
+weighted avg       0.80      0.71      0.68       312
+开源诈骗数据集+正常数据集+GRU：
+Test Loss:  0.063, Test Acc:  97.66%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.99      0.96      0.98       107
+      normal       0.96      0.99      0.98       107
+
+    accuracy                           0.98       214
+   macro avg       0.98      0.98      0.98       214
+weighted avg       0.98      0.98      0.98       214
+小样本诈骗数据集+正常数据集+LSTM：
+Test Loss:    1.0, Test Acc:  76.60%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.97      0.55      0.70       156
+      normal       0.69      0.98      0.81       156
+
+    accuracy                           0.77       312
+   macro avg       0.83      0.77      0.75       312
+weighted avg       0.83      0.77      0.75       312
+开源诈骗数据集+正常数据集+LSTM：
+Test Loss:  0.054, Test Acc:  98.13%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.99      0.97      0.98       107
+      normal       0.97      0.99      0.98       107
+
+    accuracy                           0.98       214
+   macro avg       0.98      0.98      0.98       214
+weighted avg       0.98      0.98      0.98       214
