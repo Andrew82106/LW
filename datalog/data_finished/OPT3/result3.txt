@@ -31,6 +31,50 @@ Precision, Recall and F1-Score...
     accuracy                           0.98       312
    macro avg       0.98      0.98      0.98       312
 weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=69%-31%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.066, Test Acc:  97.76%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.96      0.98       156
+      normal       0.96      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=68%-32%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.052, Test Acc:  99.04%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.98      0.99       156
+      normal       0.98      1.00      0.99       156
+
+    accuracy                           0.99       312
+   macro avg       0.99      0.99      0.99       312
+weighted avg       0.99      0.99      0.99       312
+训练集：混合数据集(生成-开源=67%-33%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.063, Test Acc:  97.76%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.96      0.98       156
+      normal       0.96      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=66%-34%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.049, Test Acc:  98.40%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.97      0.98       156
+      normal       0.97      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
 训练集：混合数据集(生成-开源=65%-35%)+正常数据集 测试集：开源数据集 模型：CNN
 Test Loss:  0.062, Test Acc:  97.12%
 Precision, Recall and F1-Score...
