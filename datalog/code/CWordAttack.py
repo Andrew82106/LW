@@ -41,7 +41,7 @@ def CWordAttack_OnWord(WordIn: str):  # 修改单个词语，四种mode都有，
     elif x_ == 2:  # 拆解
         LEN = len(WordIn)
         pos = random.randint(0, LEN - 1)
-        return WordIn[0:pos] + '#' + WordIn[pos:LEN]
+        return WordIn[0:pos] + '#-#' + WordIn[pos:LEN]
     else:  # 转拼音
         p = Pinyin()
         result1 = p.get_pinyin(WordIn)
@@ -109,7 +109,7 @@ def outputTrain(normal__, train__, validate__):
     # 输出验证集
 
 
-def modifyTrain():
+"""def modifyTrain():
     F = open("../data_finished/OPT3/runLog.txt", "a", encoding='utf-8')
     F.write('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Train:'+str(get_time())+'\n')
     TrainList = readText(TrainTXT_Made_Route, '\n\n')
@@ -159,8 +159,39 @@ def modifyTrain():
             train[sentence_id] = FusionText1(cut)
             F.close()
             # 恢复当前词语，准备对下一个词语进行修改
-    return maxPos
+    return maxPos"""
+
+
+def modifyTXT_Made():
+    TrainList = readText(TrainTXT_Made_Route, '\n\n')
+    for sentence_id in range(0, len(TrainList), 1):
+        if len(TrainList[sentence_id]) == 0:
+            continue
+        print("当前句：{}".format(TrainList[sentence_id]))
+        try:
+            cut = WordCut.WordCut(TrainList[sentence_id])
+            cnt_ = 0
+            while cnt_ < 100:
+                cnt_ += 1
+                pos = random.randint(0, len(cut)-1)
+                if len(cut[pos]) == 1:
+                    continue
+                newWord = CWordAttack_OnWord(cut[pos])
+                if newWord != cut[pos]:
+                    cut[pos] = newWord
+                    break
+            TrainList[sentence_id] = FusionText1(cut)
+            print("改后句：{}".format(TrainList[sentence_id]))
+        except Exception as e:
+            print(e)
+            raise ImportError
+    route = "/Users/andrewlee/Desktop/Projects/LW/datalog/data_finished/OPT3/Modified_Make.txt"
+    F = open(route, 'w', encoding='utf-8')
+    for i in TrainList:
+        x = i.replace("\n", '')
+        F.write(x+"\n\n")
 
 
 if __name__ == '__main__':
-    modifyTrain()
+    # NW.awakeLSTMtoTrain()
+    modifyTXT_Made()

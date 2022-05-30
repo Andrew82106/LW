@@ -59,6 +59,15 @@ class TextCNN(object):
 
             # 分类器
             self.logits = tf.layers.dense(fc, self.config.num_classes, name='fc2')
+            # print(type(self.logits))
+            # x = tf.nn.softmax(self.logits)
+            # with tf.Session() as sess:
+            #     sess.run(x.initializer)
+            # sess=tf.InteractiveSession()
+            # sess = tf.Session()
+            # sess.run(tf.global_variables_initializer())
+            # x_np = x.eval(session=sess)
+            # print(x)
             self.y_pred_cls = tf.argmax(tf.nn.softmax(self.logits), 1)  # 预测类别
 
         with tf.name_scope("optimize"):

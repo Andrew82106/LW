@@ -135,7 +135,7 @@ class OptII:
         # 规定数据集大小
         a = Fusion(fraud_list.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
         b = Fusion(produced_list.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
-        c0 = Fusion(produced_list.copy(), fraud_list.copy(), int(min(zi, yi) * 0.5), int(min(zi, yi) * 0.5))
+        c0 = Fusion(produced_list.copy(), fraud_list.copy(), int(min(zi, yi) * 0.80), int(min(zi, yi) * 0.20))
         c = Fusion(c0.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
         if len(a) != len(b) or len(b) != len(c):
             print("ERROR")
@@ -159,4 +159,83 @@ class OptII:
         # 从输出混合后的训练集至文件
 
 
+class OptIII:
+
+    @staticmethod
+    def deal_4000_data():  # 获得生成的4000条数据
+        f = open("/Users/andrewlee/Desktop/Projects/LW/datalog/data_finished/OPT3/Modified_Make.txt")
+        # w = open("dataMadeFromCNN/trainDataMakeFromCnn.txt", 'w', encoding='utf-8')
+        x = f.read()
+        y = x.split('\n')
+        cnt = 0
+        ListOut = []
+        for i in y:
+            if len(i) < 45:
+                continue
+            if cnt > 4000:
+                break
+            cnt += 1
+            i = i.replace("\n", ' ')
+            ListOut.append("fraud\t"+i)
+        return ListOut
+
+    @staticmethod
+    def makeTrain():
+        df = pd.read_excel("openSource.xls")
+        normal_list = []
+        fraud_list = []
+        for i in df[df['label'] != 'normal']['content']:
+            fraud_list.append('fraud' + '\t' + i)
+        for i in df[df['label'] == 'normal']['content']:
+            normal_list.append('normal' + '\t' + i)
+        # 读取开源数据中的正常文本和诈骗文本
+        produced_list = OptIII.deal_4000_data()
+        # 读取生成的数据文本
+        xi = len(normal_list)
+        yi = len(fraud_list)
+        zi = len(produced_list)
+        Size = min(xi, yi, zi)*2 - 10
+        # 规定数据集大小
+        a = Fusion(fraud_list.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
+        b = Fusion(produced_list.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
+        c0 = Fusion(produced_list.copy(), fraud_list.copy(), int(min(zi, yi) * 0.5), int(min(zi, yi) * 0.5))
+        c = Fusion(c0.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
+        if len(a) != len(b) or len(b) != len(c):
+            print("ERROR")
+        else:
+            print("len(a)={} len(b)={} len(c)={}".format(len(a), len(b), len(c)))
+        # 混合数据集
+        a0, a1 = extract_by_Rate(a, 0.8)
+        OutPut(a0, 'data_finished/OPT3/Train_fraud_list_normal_list.txt', 'w')
+        OutPut(a1, 'data_finished/OPT3/Validate_fraud_list_normal_list.txt', 'w')
+        b0, b1 = extract_by_Rate(b, 0.8)
+        OutPut(b0, 'data_finished/OPT3/Train_produced_list_normal_list.txt', 'w')
+        OutPut(b1, 'data_finished/OPT3/Validate_produced_list_normal_list.txt', 'w')
+        c0, c1 = extract_by_Rate(c, 0.8)
+        OutPut(c0, 'data_finished/OPT3/Train_fraud_list_produced_list_normal_list.txt', 'w')
+        OutPut(c1, 'data_finished/OPT3/Validate_fraud_list_produced_list_normal_list.txt', 'w')
+        # 输出训练集
+
+    @staticmethod
+    def Main():
+        OptIII.makeTrain()
+        # 从输出混合后的训练集至文件
+
+
 OptII.Main()
+
+if __name__ == '__main__':
+    """f = open('/Users/andrewlee/Desktop/Projects/LW/datalog/dataMadeFromCNN/4000text.txt', 'w', encoding='utf-8')
+    df = pd.read_excel("openSource.xls")
+    normal_list = []
+    fraud_list = []
+    for i in df[df['label'] != 'normal']['content']:
+        f.write(i+"\n\n")
+    f.close()"""
+    """f = open('/Users/andrewlee/Desktop/Projects/LW/datalog/data_finished/OPT3/Modified_Make.txt', 'w', encoding='utf-8')
+    normal_list = []
+    fraud_list = []
+    for i in df[df['label'] != 'normal']['content']:
+        f.write(i + "\n\n")
+    f.close()"""
+    pass

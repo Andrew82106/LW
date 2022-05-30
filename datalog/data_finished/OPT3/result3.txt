@@ -1,0 +1,176 @@
+训练集：混合数据集(生成-开源=80%-20%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.055, Test Acc:  97.76%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.96      0.98       156
+      normal       0.96      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=75%-25%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.042, Test Acc:  98.40%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.97      0.98       156
+      normal       0.97      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=70%-30%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.052, Test Acc:  98.08%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.96      0.98       156
+      normal       0.96      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=65%-35%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.062, Test Acc:  97.12%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.94      0.97       156
+      normal       0.95      1.00      0.97       156
+
+    accuracy                           0.97       312
+   macro avg       0.97      0.97      0.97       312
+weighted avg       0.97      0.97      0.97       312
+训练集：混合数据集(生成-开源=60%-40%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:   0.03, Test Acc:  98.40%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.99      0.97      0.98       156
+      normal       0.97      0.99      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=55%-45%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.092, Test Acc:  96.79%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.94      0.97       156
+      normal       0.94      1.00      0.97       156
+
+    accuracy                           0.97       312
+   macro avg       0.97      0.97      0.97       312
+weighted avg       0.97      0.97      0.97       312
+训练集：混合数据集(生成-开源=50%-50%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.053, Test Acc:  97.76%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.96      0.98       156
+      normal       0.96      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=45%-55%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.065, Test Acc:  97.44%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.95      0.97       156
+      normal       0.95      1.00      0.97       156
+
+    accuracy                           0.97       312
+   macro avg       0.98      0.97      0.97       312
+weighted avg       0.98      0.97      0.97       312
+训练集：混合数据集(生成-开源=40%-60%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.072, Test Acc:  96.79%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.99      0.94      0.97       156
+      normal       0.95      0.99      0.97       156
+
+    accuracy                           0.97       312
+   macro avg       0.97      0.97      0.97       312
+weighted avg       0.97      0.97      0.97       312
+训练集：混合数据集(生成-开源=35%-65%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.053, Test Acc:  98.08%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.96      0.98       156
+      normal       0.96      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=30%-70%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.076, Test Acc:  97.44%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.95      0.97       156
+      normal       0.95      1.00      0.97       156
+
+    accuracy                           0.97       312
+   macro avg       0.98      0.97      0.97       312
+weighted avg       0.98      0.97      0.97       312
+训练集：混合数据集(生成-开源=25%-75%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.062, Test Acc:  98.08%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.99      0.97      0.98       156
+      normal       0.97      0.99      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=20%-80%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:   0.05, Test Acc:  98.40%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.97      0.98       156
+      normal       0.97      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=15%-85%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.075, Test Acc:  97.44%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.95      0.97       156
+      normal       0.95      1.00      0.97       156
+
+    accuracy                           0.97       312
+   macro avg       0.98      0.97      0.97       312
+weighted avg       0.98      0.97      0.97       312
+训练集：混合数据集(生成-开源=10%-90%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.057, Test Acc:  97.76%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.96      0.98       156
+      normal       0.96      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：混合数据集(生成-开源=5%-95%)+正常数据集 测试集：开源数据集 模型：CNN
+Test Loss:  0.079, Test Acc:  97.12%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       0.99      0.95      0.97       156
+      normal       0.95      0.99      0.97       156
+
+    accuracy                           0.97       312
+   macro avg       0.97      0.97      0.97       312
+weighted avg       0.97      0.97      0.97       312

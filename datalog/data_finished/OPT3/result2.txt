@@ -1,0 +1,66 @@
+训练集：正常+开源诈骗数据集的对抗样本 测试集：诈骗数据小样本 神经网络：CNN
+Test Loss:    1.4, Test Acc:  59.81%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.20      0.33       107
+      normal       0.55      1.00      0.71       107
+
+    accuracy                           0.60       214
+   macro avg       0.78      0.60      0.52       214
+weighted avg       0.78      0.60      0.52       214
+训练集：正常+开源诈骗数据集的对抗样本 测试集：开源诈骗数据集 神经网络：CNN
+Test Loss:  0.072, Test Acc:  96.47%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.93      0.96       156
+      normal       0.93      1.00      0.97       156
+
+    accuracy                           0.96       312
+   macro avg       0.97      0.96      0.96       312
+weighted avg       0.97      0.96      0.96       312
+训练集：正常+开源诈骗数据集的对抗样本 测试集：诈骗数据小样本 神经网络：LSTM
+Test Loss:   0.11, Test Acc:  97.76%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.96      0.98       156
+      normal       0.96      1.00      0.98       156
+
+    accuracy                           0.98       312
+   macro avg       0.98      0.98      0.98       312
+weighted avg       0.98      0.98      0.98       312
+训练集：正常+开源诈骗数据集的对抗样本 测试集：开源诈骗数据集 神经网络：LSTM
+Test Loss:    1.7, Test Acc:  72.43%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.45      0.62       107
+      normal       0.64      1.00      0.78       107
+
+    accuracy                           0.72       214
+   macro avg       0.82      0.72      0.70       214
+weighted avg       0.82      0.72      0.70       214
+训练集：正常+开源诈骗数据集的对抗样本 测试集：诈骗数据小样本 神经网络：GRU
+Test Loss:   0.16, Test Acc:  95.83%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.92      0.96       156
+      normal       0.92      1.00      0.96       156
+
+    accuracy                           0.96       312
+   macro avg       0.96      0.96      0.96       312
+weighted avg       0.96      0.96      0.96       312
+训练集：正常+开源诈骗数据集的对抗样本 测试集：开源诈骗数据集 神经网络：GRU
+Test Loss:    1.7, Test Acc:  71.96%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+       fraud       1.00      0.44      0.61       107
+      normal       0.64      1.00      0.78       107
+
+    accuracy                           0.72       214
+   macro avg       0.82      0.72      0.70       214
+weighted avg       0.82      0.72      0.70       214
