@@ -61,13 +61,22 @@ if __name__ == '__main__':
     f2 = open(ValRoute[cnt], 'r', encoding='utf-8')
     f3 = open(ModelValRoute, 'w', encoding='utf-8')
     # 规定训练集和验证集
-    f4 = open(FraudMiniRoute, 'r', encoding='utf-8')
+    f4 = open(FraudOpenSource, 'r', encoding='utf-8')
     f5 = open(ModelTestRoute, 'w', encoding='utf=8')
     # 规定测试集
     f1.write(f.read())
     f3.write(f2.read())
     f5.write(f4.read())
-    # awakeLSTMtoTrain()
-    # awakeLSTMtoTest()
-    awakeCNNtoTrain()
-    awakeCNNtoTest()
+    awakeLSTMtoTrain()
+    awakeLSTMtoTest()
+    f4.close()
+    f5.close()
+    # >>>>>>>>>>训练开源测试集
+    f4 = open(FraudMiniRoute, 'r', encoding='utf-8')
+    f5 = open(ModelTestRoute, 'w', encoding='utf=8')
+    # 规定测试集
+    f5.write(f4.read())
+    awakeLSTMtoTest()
+    # >>>>>>>>>>训练小样本测试集
+    # awakeCNNtoTrain()
+    # awakeCNNtoTest()

@@ -135,7 +135,7 @@ class OptII:
         # 规定数据集大小
         a = Fusion(fraud_list.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
         b = Fusion(produced_list.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
-        c0 = Fusion(produced_list.copy(), fraud_list.copy(), int(min(zi, yi) * 0.69), int(min(zi, yi) * 0.31))
+        c0 = Fusion(produced_list.copy(), fraud_list.copy(), int(min(zi, yi) * 0.68), int(min(zi, yi) * 0.32))
         c = Fusion(c0.copy(), normal_list.copy(), int(Size * 0.5), int(Size * 0.5))
         if len(a) != len(b) or len(b) != len(c):
             print("ERROR")
