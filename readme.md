@@ -1,3 +1,7 @@
+# 快速开始
+
+运行``datalog/OPT3/allocate.py``即可
+
 # 主要代码
 
 ``datalog/code``中：
