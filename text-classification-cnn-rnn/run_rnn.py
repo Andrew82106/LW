@@ -184,11 +184,16 @@ def test():
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2 or sys.argv[1] not in ['train', 'test']:
-        raise ValueError("""usage: python run_rnn.py [train / test]""")
-
+    if len(sys.argv) not in [2, 3]:
+        raise ValueError("""usage: python run_rnn.py test/python run_rnn.py [train / test] [model]""")
+    elif len(sys.argv) == 2 and sys.argv[1] != 'test':
+        raise ValueError("""usage: python run_rnn.py test""")
+    elif len(sys.argv) == 3 and (sys.argv[1] != 'train' or (sys.argv[2] not in ['gru', 'lstm'])):
+        raise ValueError("""usage: python run_rnn.py [train / test] [gru/lstm]""")
     print('Configuring RNN model...')
     config = TRNNConfig()
+    if len(sys.argv) == 3:
+        config.rnn = sys.argv[2]
     if not os.path.exists(vocab_dir):  # 如果不存在词汇表，重建
         build_vocab(train_dir, vocab_dir, config.vocab_size)
     categories, cat_to_id = read_category()
