@@ -263,7 +263,7 @@ class OptMain:
         c0 = Fusion(produced_list.copy(), fraud_list.copy(), int(Size * rate2), int(Size * (1 - rate2)))
         c = Fusion(c0.copy(), normal_list.copy(), int(Size * rate3), int(Size * (1 - rate3)))
         if len(a) != len(b) or len(b) != len(c):
-            print("ERROR")
+            print("生成的三个数据集大小不同")
         else:
             print("len(a)={} len(b)={} len(c)={}".format(len(a), len(b), len(c)))
         print("混合数据集")
@@ -279,6 +279,41 @@ class OptMain:
         OutPut(c1, '/Users/andrewlee/Desktop/Projects/LW/datalog/data_finished/OPT3/Validate_fraud_list_produced_list_normal_list.txt', 'w')
         print("输出训练集")
         # 输出训练集
+
+    @staticmethod
+    def OutputFusion(rate: float, rate1: float, val_rate: float):  # 生成诈骗集和诈骗集之比,生成诈骗集和诈骗集所得集合和正常集之比,训练集和验证集的比例
+        df = pd.read_excel("/Users/andrewlee/Desktop/Projects/LW/datalog/openSource.xls")
+        normal_list = []
+        fraud_list = []
+        for i in df[df['label'] != 'normal']['content']:
+            fraud_list.append('fraud' + '\t' + i)
+        for i in df[df['label'] == 'normal']['content']:
+            normal_list.append('normal' + '\t' + i)
+        print("读取开源数据中的正常文本和诈骗文本")
+        # 读取开源数据中的正常文本和诈骗文本
+        produced_list = OptMain.deal_4000_data()
+        print("读取生成的数据文本")
+        # 读取生成的数据文本
+        xi = len(normal_list)
+        yi = len(fraud_list)
+        zi = len(produced_list)
+        Size = min(xi, yi, zi) * 2 - 10
+        # 规定数据集大小
+        c0 = Fusion(produced_list.copy(), fraud_list.copy(), int(Size * rate), int(Size * (1 - rate)))
+        print("INFO:生成诈骗数据集和自然诈骗数据集之比：{}".format(rate))
+        c = Fusion(c0.copy(), normal_list.copy(), int(Size * rate1), int(Size * (1 - rate1)))
+        print("INFO:生成诈骗集和诈骗集所得集合和正常集之比：{}".format(rate1))
+        print("INFO:混合数据集")
+        # 混合数据集
+        c0, c1 = extract_by_Rate(c, val_rate)
+        print("INFO:训练集和验证集的比：{}".format(val_rate))
+        OutPut(c0,
+               '/Users/andrewlee/Desktop/Projects/LW/datalog/data_finished/OPT3/Train_fraud_list_produced_list_normal_list.txt',
+               'w')
+        OutPut(c1,
+               '/Users/andrewlee/Desktop/Projects/LW/datalog/data_finished/OPT3/Validate_fraud_list_produced_list_normal_list.txt',
+               'w')
+        print("输出训练集")
 
     @staticmethod
     def Main():
